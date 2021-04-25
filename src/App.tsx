@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.scss';
 
-import Header from './components/Header';
-import MovieList from './components/MovieList';
-import Search from './components/Search';
+import Header from './components/header/Header';
+import MovieList from './components/movieList/MovieList';
+import SearchBar from './components/searchBar/SearchBar';
 
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Search />
+      <SearchBar />
       <MovieList />
     </div>
   );

@@ -1,0 +1,31 @@
+.search-bar-container {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+
+  .search-bar {
+    border-width: 0.12rem;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 0.2rem;
+    width: 20rem;
+    margin-right: 1rem;
+  }
+  .search-btn {
+    border: none;
+    background-color: rgb(94, 143, 235);
+    color: white;
+    font-weight: 700;
+    border-radius: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &:hover {
+      box-shadow: 0px 0px 6px 2px lightgrey;
+    }
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
