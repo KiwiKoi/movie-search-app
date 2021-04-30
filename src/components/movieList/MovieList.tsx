@@ -1,10 +1,15 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import MovieCard from '../movieCard/MovieCard';
+import axios from 'axios';
 
 import "./movieList.scss"
 
-function MovieList() {
+const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
 
+
+
+function MovieList() {
+  const [movies, setMovies] = useState([]) as any;
   const data = [
     {
       id: 1,
@@ -23,12 +28,27 @@ function MovieList() {
     }
   ]
 
+  useEffect(() => {
+    axios.get(MOVIE_API_URL)
+      .then(function (response) {
+        setMovies(response.data.Search);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        console.log(movies)
+      });
+
+  }, [])
+
+
   return (
     <div className="movie-list-component">
       <h1 className="list-title">Movie List</h1>
       <div className="movie-list-container">
-        {data.map((item) => {
-          return <MovieCard key={item.id} title={item.title} year={item.year} />
+        {movies.map((movie: any, index: number) => {
+          return <MovieCard key={index} Title={movie.Title} Year={movie.Year} imdbID={movie.imdbID} Poster={movie.Poster} Type={movie.Type} />
         })}
       </div>
 

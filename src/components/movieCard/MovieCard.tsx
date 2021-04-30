@@ -1,11 +1,15 @@
-import React from 'react'
 import './movieCard.scss'
 
-function MovieCard(props: { title: string; year: string }) {
+function MovieCard(movie: { Title: string; Year: string; imdbID: string; Type: string; Poster: string }) {
+
+  const { Title, Year, imdbID, Type, Poster } = movie;
   return (
     <div className="movie-card-component">
-      <p>{props.title}</p>
-      <p>{props.year}</p>
+      <p>{Title}</p>
+      <p>{Year}</p>
+      <p>{imdbID}</p>
+      <p>{Type}</p>
+      <img src={Poster} />
     </div>
   )
 }
