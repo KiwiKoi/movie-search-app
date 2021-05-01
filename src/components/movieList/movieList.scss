@@ -1,12 +1,12 @@
 .movie-list-component {
   margin: 2rem;
-}
 
-.list-title {
-  text-align: center;
-}
-
-.movie-list-container {
-  margin: auto;
-  display: flex;
+  .list-title {
+    text-align: center;
+  }
+  .movie-list-container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

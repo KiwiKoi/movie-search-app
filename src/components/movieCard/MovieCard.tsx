@@ -5,11 +5,9 @@ function MovieCard(movie: { Title: string; Year: string; imdbID: string; Type: s
   const { Title, Year, imdbID, Type, Poster } = movie;
   return (
     <div className="movie-card-component">
-      <p>{Title}</p>
+      <div className="img-container"><img src={Poster} /></div>
+      <h2>{Title}</h2>
       <p>{Year}</p>
-      <p>{imdbID}</p>
-      <p>{Type}</p>
-      <img src={Poster} />
     </div>
   )
 }

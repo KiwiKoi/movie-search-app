@@ -1,7 +1,10 @@
+$breakpoint-phone-sm: 480px;
+$breakpoint-tablet: 760px;
+
 .search-bar-container {
-  margin: 2rem auto;
   display: flex;
-  flex-direction: row;
+  margin: 2rem auto;
+  flex-direction: column;
   width: fit-content;
 
   .search-bar {
@@ -9,23 +12,33 @@
     border-style: solid;
     border-color: lightgray;
     border-radius: 0.2rem;
-    width: 20rem;
-    margin-right: 1rem;
+    margin: 1rem auto;
+    width: 15rem;
   }
   .search-btn {
     border: none;
     background-color: rgb(94, 143, 235);
     color: white;
     font-weight: 700;
+    text-align: center;
     border-radius: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    width: 5rem;
+    margin: auto;
 
     &:hover {
       box-shadow: 0px 0px 6px 2px lightgrey;
     }
     &:active {
       box-shadow: none;
+    }
+  }
+}
+@media (min-width: $breakpoint-phone-sm) {
+  .search-bar-container {
+    flex-direction: row;
+
+    .search-btn {
+      margin: auto 1rem;
     }
   }
 }
